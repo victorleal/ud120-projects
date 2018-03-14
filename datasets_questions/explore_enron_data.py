@@ -19,4 +19,11 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+total_emails = 0
 
+for key, value in enron_data.items():
+    if value["total_stock_value"] == 'NaN':
+        total_emails += 1
+
+print total_emails
+print len(enron_data)
